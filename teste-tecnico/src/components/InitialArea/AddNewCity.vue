@@ -34,3 +34,23 @@
     }
   }
 </script>
+
+<style scoped>
+  input {
+    width: 850px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px #BDBDBD solid;
+    border-radius: 5px;
+  }
+  button {
+    margin-left: 5px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #BDBDBD;
+  }
+</style>
