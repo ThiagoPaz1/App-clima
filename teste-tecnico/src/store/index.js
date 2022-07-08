@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     citys: [],
+    nameDefaultCitys: ['Maceió', 'Caruaru', 'São Paulo', 'Natal', 'Brasilia'],
   },
   mutations: {
     defaultCitys(state, newValue) {
@@ -14,11 +15,14 @@ export default new Vuex.Store({
     },
     addCity(state, newValue) {
       state.citys.push(newValue);
+    },
+    addNameCity(state, newValue) {
+      state.nameDefaultCitys.push(newValue);
     }
   },
   actions: {
     async generating({ commit }) {
-      const nameDefaultCitys = ['Maceió', 'Caruaru', 'São Paulo', 'Natal', 'Brasilia'];
+      const { nameDefaultCitys } = this.state;
       let dataDefaultCitys = [];
 
       for (let i in nameDefaultCitys) {
