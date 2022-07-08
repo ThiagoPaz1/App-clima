@@ -8,7 +8,7 @@
         <h4>Minima: {{ city.forecast[0].min }}ºC</h4>
         <h4>Dia: {{ city.forecast[0].date }}</h4>
         <button @click="removeCity(city)">Remover cidade</button>
-        <router-link to="/details">
+        <router-link :to="{ name: 'DetailsCity', params: { city } }">
           <button>Ver mais Detalhes</button>
         </router-link>
       </li>
@@ -19,6 +19,11 @@
 <script>
   export default {
     name: 'CardsCitys',
+    data() {
+      return {
+        activeDetails: 1,
+      }
+    },
     methods: {
       removeCity(city) {
         const { citysInitials } = this;
