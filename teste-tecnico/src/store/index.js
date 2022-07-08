@@ -31,7 +31,6 @@ export default new Vuex.Store({
       }
 
       commit('defaultCitys', dataDefaultCitys);
-      console.log(this.state.citys);
     }
   }
 });

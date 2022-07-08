@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import InitialAndDetailsArea from './pages/InitialAndDetailsArea.vue';
+  import InitialAndDetailsArea from '@/pages/InitialAndDetailsArea';
   export default {
     name: 'App',
     components: {

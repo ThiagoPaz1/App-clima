@@ -9,3 +9,10 @@
     name: 'InitialAndDetailsArea',
   }
 </script>
+
+<style>
+  * {
+    font-family: arial;
+    background-color: #EFFBF8;
+  }
+</style>
