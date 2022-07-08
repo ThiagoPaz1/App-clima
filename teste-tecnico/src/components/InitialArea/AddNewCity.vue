@@ -27,6 +27,7 @@
           const result = await requestApi(this.text);
 
           this.$store.commit('addCity', result);
+          this.$store.commit('addCity', result);
           this.text = '';
         }
       }

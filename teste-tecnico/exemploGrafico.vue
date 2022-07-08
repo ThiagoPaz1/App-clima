@@ -10,7 +10,7 @@ export default {
   name: 'App',
 
   data() {
-   return {
+    return {
      options: {
        categories: [1, 2, 3, 4, 5]
      },

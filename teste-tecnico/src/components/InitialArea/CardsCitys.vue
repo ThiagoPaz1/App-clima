@@ -19,11 +19,6 @@
 <script>
   export default {
     name: 'CardsCitys',
-    data() {
-      return {
-        activeDetails: 1,
-      }
-    },
     methods: {
       removeCity(city) {
         const { citysInitials } = this;
