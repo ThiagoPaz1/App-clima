@@ -19,15 +19,15 @@
         const { citys } = this.$store.state;
         const checkNameCity = citys.find(i => i.city_name === this.text);
 
-        if (!this.text) {
-         return alert('É necessário o nome de uma cidade'); 
+        if (!this.text || this.text.length < 4) {
+         return alert('É necessário um nome valido de uma cidade'); 
         } else if (checkNameCity) {
           return alert('Essa cidade já esta listada');
         } else {
           const result = await requestApi(this.text);
 
           this.$store.commit('addCity', result);
-          this.$store.commit('addCity', result);
+          this.$store.commit('addNameCity', this.text);
           this.text = '';
         }
       }
