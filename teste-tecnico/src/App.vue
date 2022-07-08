@@ -1,15 +1,15 @@
 <template>
   <div>
-   <initialAndDetailsArea />
+   <InitialAndDetailsArea />
   </div>
 </template>
 
 <script>
-  import initialAndDetailsArea from './pages/initialAndDetailsArea.vue';
+  import InitialAndDetailsArea from './pages/InitialAndDetailsArea.vue';
   export default {
     name: 'App',
     components: {
-      initialAndDetailsArea
+      InitialAndDetailsArea
     }
   };
 </script>

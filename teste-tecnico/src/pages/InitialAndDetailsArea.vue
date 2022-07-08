@@ -8,9 +8,9 @@
 
 <script>
   import MainArea from '@/components/InitialArea/MainArea.vue';
- 
+
   export default {
-    name: 'initialAndDetailsArea',
+    name: 'InitialAndDetailsArea',
     components: {
       MainArea
     }

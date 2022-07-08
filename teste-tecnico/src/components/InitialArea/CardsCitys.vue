@@ -8,6 +8,9 @@
         <h4>Minima: {{ city.forecast[0].min }}ºC</h4>
         <h4>Dia: {{ city.forecast[0].date }}</h4>
         <button @click="removeCity(city)">Remover cidade</button>
+        <router-link to="/details">
+          <button>Ver mais Detalhes</button>
+        </router-link>
       </li>
     </ul>
   </div>
