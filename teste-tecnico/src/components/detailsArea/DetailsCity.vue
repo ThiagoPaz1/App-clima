@@ -55,3 +55,19 @@
     }
   }
 </script>
+
+<style scoped>
+  a {
+    background-color: #BDBDBD;
+    border-radius: 5px;
+  }
+  a button {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #BDBDBD;
+  }
+</style>
