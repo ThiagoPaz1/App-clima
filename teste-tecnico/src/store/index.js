@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     citys: [],
     nameDefaultCitys: ['Maceió', 'Caruaru', 'São Paulo', 'Natal', 'Brasilia'],
+    loading: false,
   },
   mutations: {
     defaultCitys(state, newValue) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     addNameCity(state, newValue) {
       state.nameDefaultCitys.push(newValue);
+    },
+    loadingChange(state, newValue) {
+      state.loading = newValue;
     }
   },
   actions: {
@@ -28,6 +32,10 @@ export default new Vuex.Store({
       for (let i in nameDefaultCitys) {
         const res = await requestApi(nameDefaultCitys[i]);
         dataDefaultCitys.push(res);
+
+        if (dataDefaultCitys.length === nameDefaultCitys.length) {
+          commit('loadingChange', true);
+        } 
       }
 
       commit('defaultCitys', dataDefaultCitys);

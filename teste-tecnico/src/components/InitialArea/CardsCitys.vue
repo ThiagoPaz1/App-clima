@@ -1,7 +1,13 @@
 <template>
-  <div>
+  <div>    
     <ul>
-      <li :key="index" v-for="(city, index) in citysInitials.citys">
+      <ScalingSquaresSpinner
+        v-show="!$store.state.loading"
+        :animation-duration="1250"
+        :size="225"
+        color="#2EFEF7"
+      />
+      <li v-show="$store.state.loading" :key="index" v-for="(city, index) in citysInitials.citys">
         <h3>Cidade: {{ city.city }}</h3>
         <h4>Tempo: {{ city.forecast[0].description }}</h4>
         <h4>Máxima: {{ city.forecast[0].max }}ºC</h4>
@@ -19,8 +25,12 @@
 </template>
 
 <script>
+  import { ScalingSquaresSpinner  } from 'epic-spinners'
   export default {
     name: 'CardsCitys',
+    components: {
+      ScalingSquaresSpinner,
+    },
     methods: {
       removeCity(city) {
         const { citys, nameDefaultCitys } = this.citysInitials; 
@@ -34,10 +44,9 @@
       }
     },
     computed: {
-      citysInitials() {
+      citysInitials() { 
         const { citys, nameDefaultCitys } = this.$store.state;
         const statesVuex = {citys, nameDefaultCitys}
-        console.log(citys)
         return statesVuex;
       }
     }
