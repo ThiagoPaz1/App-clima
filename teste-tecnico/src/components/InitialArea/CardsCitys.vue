@@ -6,7 +6,7 @@
         <h4>Tempo: {{ city.forecast[0].description }}</h4>
         <h4>Máxima: {{ city.forecast[0].max }}ºC</h4>
         <h4>Minima: {{ city.forecast[0].min }}ºC</h4>
-        <h4>Dia: {{ city.forecast[0].date }}</h4>
+        <h4>Dia: {{ city.date }}</h4>
         <div class="btn-group">
           <router-link :to="{ name: 'DetailsCity', params: { city } }">
             <button >Ver mais Detalhes</button>
@@ -37,6 +37,7 @@
       citysInitials() {
         const { citys, nameDefaultCitys } = this.$store.state;
         const statesVuex = {citys, nameDefaultCitys}
+        console.log(citys)
         return statesVuex;
       }
     }
@@ -52,13 +53,16 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+  ul div {
+    margin-top: 20px;
+  }
   li {
     display: flex;
     flex-direction: column;
     width: 350px;
-    list-style: none;
     margin: 7.5px;
     padding: 10px;
+    list-style: none;
     background-color: #81F7F3;
     border-radius: 5px;
   }
